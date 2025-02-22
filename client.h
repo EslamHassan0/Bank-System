@@ -8,21 +8,17 @@ protected:
 public:
     Client() {}
     Client(int id, string name, string password, double balance) : Person(id, name, password) {
-        this->balance = balance;
+        setBalance(balance);
     }
 
     // setters
-    void setId(int id) { Person::setId(id); }
-    void setName(string name) { Person::setName(name); }
-    void setPassword(string password) { Person::setPassword(password); }
-    void setBalance(double balance) { this->balance = balance; }
-    // getters
-    int getId(){return person::getId();}
-    string getName(){return person::getName();}
-    string getPassword(){return person::getPassword();}
-    double getBalance() {
+    void setBalance(double balance) { 
         if(balance <= 1500) 
             throw checkBalance();
+        this->balance = balance; 
+    }
+    // getters
+    double getBalance() {
         return balance
     }
 
