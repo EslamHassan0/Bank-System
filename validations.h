@@ -1,4 +1,5 @@
 
+#ifndef VALIDATIONS_H
 #define VALIDATIONS_H
 
 #include <iostream>
@@ -33,3 +34,5 @@ class checkSalary : public exception{
             return "Salary Must be greater than 5000";
         }
 };
+
+#endif
