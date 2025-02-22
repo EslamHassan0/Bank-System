@@ -8,31 +8,34 @@ protected:
 public:
     Employee() {}
     Employee(int id, string name, string password, double salary) : Person(id, name, password) {
-        this->salary = salary;
+        setSalary(salary);
     }
     // setters
-    void setId(int id) { Person::setId(id); }
-    void setName(string name) { Person::setName(name); }
-    void setPassword(string password) { Person::setPassword(password); }
-    void setSalary(double salary) { this->salary = salary; }
+    void setSalary(double salary) { 
 
-    // getters
-    int getId(){return person::getId();}
-    string getName(){return person::getName();}
-    string getPassword(){return person::getPassword();}
-    double getSalary() {
         while (true) {
             try {
                 cout << "Enter Salary: ";
-                cin >> balance;
+                cin >> salary;
                 if (salary <= 5000) {
                     throw checkSalary();
                 }
-                return salary;
+                this->salary = salary;
+                break;
             } catch (const checkSalary& e) {
                 cout << "Error: " << e.what() << endl;
             }
         }
     }
+    // getters
+    double getSalary() {
+       return salary;
+    }
 
+   void display() {
+        cout << "ID: " << getId() << endl;
+        cout << "Name: " << getName() << endl;
+        cout << "Password: " << getPassword() << endl;
+        cout << "Salary: " << getSalary() << endl;
+    }
 };
