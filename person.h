@@ -1,4 +1,5 @@
 
+#ifndef PERSON_H
 #define PERSON_H
 #include <iostream>
 #include <string>
@@ -18,8 +19,8 @@ class Person{
     // parametariza ctrs
         Person(int id, string name, string password){
             this->id = id;
-            this->name = name;
-            this-> password = password;
+           setName(name);
+            setPassword(password);
         }
         //setters
         void setId(int id){
@@ -75,3 +76,4 @@ class Person{
             cout << "Password: " << getPassword() << endl;
         }
 };
+#endif
