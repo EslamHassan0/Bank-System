@@ -1,6 +1,5 @@
 
-#ifndef PERSON_H
-#define PERSON_H
+#pragma once
 #include <iostream>
 #include <string>
 #include <exception>
@@ -9,6 +8,7 @@ using namespace std;
 
 // define validation class
 #include "Validations.h"
+#include "IDataSource.h"
 class Person{
     protected:
         int id;
@@ -58,6 +58,12 @@ class Person{
                 }
             }
         }
+
+        void collectData() {
+            setId(id);
+            setName(name);
+            setPassword(password);
+        }
         //getters
         int getId() {
             
@@ -69,11 +75,4 @@ class Person{
         string getPassword() {
             return password;
         }
-
-       void display(){
-            cout << "ID: " << getId() << endl;
-            cout << "Name: " << getName() << endl;
-            cout << "Password: " << getPassword() << endl;
-        }
 };
-#endif
