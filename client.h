@@ -55,4 +55,14 @@ public:
             }
         }
     }
+
+    void invoke() {
+        do {
+            collectData();
+            setSalary(salary);
+            addEmployee();
+            cout << "Do you want to add another employee? (y/n): ";
+            cin >> choice;
+        } while (choice == 'y' || choice == 'Y');
+    }
 };

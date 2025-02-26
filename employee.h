@@ -32,7 +32,7 @@ public:
         }
     }
     void addEmployee(){
-        fileName = "Emps.txt";
+        fileName = "FileReadSystem/Emps.txt";
         fstream file(fileName, ios::app);
         file << getId() << "|" << getName() << "|" << getPassword() << "|" << getSalary() << endl;
         cout << "Employee added successfully!" << endl;
