@@ -1,10 +1,10 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
 class Client;
 class Employee;
 class Admin;
-
 class IDataSource {
 public:
     virtual void addClient(const Client& client) = 0;           
